@@ -81,7 +81,6 @@ def user(Authorize: AuthJWT = Depends()):
 def register(user:CreateUser):
     mycursor = mydb.cursor()
     mycursor.execute("INSERT INTO user ( username, email ,password) VALUES ('"+user.username+"','"+user.email+"','"+user.password+"')")
-    mycursor.execute("INSERT into panier (email) select email from user where email not in (select email from panier)")
     mydb.commit()
     return {"done"}
 
