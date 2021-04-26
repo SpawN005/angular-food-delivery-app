@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row" *ngIf="product">
+    <div class="col-lg-6 col-sm-5">
+      <img class="product-img" src="{{ product.img }}" />
+    </div>
+    <div class="col-lg-6 col-sm-7">
+      <h2>{{ product.foodnom }}</h2>
+      <h3>{{ product.price | currency }}</h3>
+      <h4>{{ product.description }}</h4>
+      <div class="btn-display">
+        <div class="label-input">
+          <label
+            id="label"
+            style="font-size: 10px; font-style: lato"
+            sfor="input"
+            >Quantity</label
+          >
+          <input
+            id="input"
+            type="number"
+            min="1"
+            max="9"
+            step="1"
+            value="1"
+            style="width: 75%; height: 30px"
+          />
+        </div>
+        <button class="btn" (click)="addToCart(product, value)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

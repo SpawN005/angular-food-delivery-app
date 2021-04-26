@@ -1,0 +1,60 @@
+<div class="container-fluid p-0 m-0">
+  <div class="row-container rowno-gutters">
+    <div class="col-lg-4">
+      <img class="img-fluid" src="{{ log }}" />
+    </div>
+    <div class="col-lg-8 col-sm">
+      <form class="form-container" [formGroup]="form" (ngSubmit)="login()">
+        <div>
+          <h1 id="h1">Sign in to yout account</h1>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            formControlName="email"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </div>
+        <button type="submit" class="btn-log">Sign in</button>
+        <div>
+          <br />
+          <a
+            style="text-decoration: none; color: #868e96"
+            routerLinkActive="active"
+            routerLink="/PasswordRecovery"
+          >
+            Forget Password</a
+          >
+        </div>
+        <div>
+          <span>Don't Have an account?</span>
+          <a
+            style="text-decoration: none; color: #030303"
+            routerLinkActive="active"
+            routerLink="/register"
+          >
+            Register here</a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

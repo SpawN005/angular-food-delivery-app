@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="col-lg-12 col-sm-6">
+    <p>
+      <mat-toolbar>
+        <h1>Special Menu</h1>
+      </mat-toolbar>
+    </p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p id="t1">Special Menu</p>
+      <p id="t2">
+        Lorem Ipsum is imply dummy text of the priting and typesetting
+      </p>
+      <app-product-filter></app-product-filter>
+    </div>
+  </div>
+  <div class="row products">
+    <div *ngFor="let product of products" class="col-md-4 col-sm-6">
+      <mat-card class="example-card">
+        <a
+          [title]="product.foodnom + ' details'"
+          [routerLink]="['/products', product.idfood]"
+          style="text-decoration: none"
+        >
+          <img
+            mat-card-image
+            style="border-radius: 20px"
+            src="{{ product.img }}"
+          />
+          <mat-card-header>
+            <mat-card-title>{{ product.foodnom }}</mat-card-title>
+
+            <mat-card-subtitle>Lunch-Dinner</mat-card-subtitle>
+          </mat-card-header>
+        </a>
+        <mat-card-content>
+          <ngb-rating
+            [(rate)]="product.currentRate"
+            max="5"
+            [(readonly)]="readonly"
+          >
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
+          <hr />
+
+          <p>
+            {{ product.description }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

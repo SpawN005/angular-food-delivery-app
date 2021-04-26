@@ -1,0 +1,55 @@
+#cart {
+  color: #d5b183;
+  font-weight: 500;
+  font-size: xx-large;
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-bottom: 30px;
+}
+table {
+  font-size: larger;
+}
+#remove {
+  text-align: right;
+}
+#color {
+  text-decoration-line: black;
+  color: #d5b183;
+}
+#X {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: black;
+}
+#update {
+  background-color: #d5b183;
+  border: none;
+  color: white;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+#update:hover {
+  background-color: #bf9f75;
+}
+#row {
+  margin-top: 10px;
+}
+#check {
+  margin-top: 10px;
+  background-color: #d5b183;
+  border: none;
+  color: white;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  margin-bottom: 80px;
+  width: 100%;
+}
+#check:hover {
+  background-color: #bf9f75;
+}

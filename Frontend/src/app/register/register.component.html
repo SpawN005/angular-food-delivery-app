@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="reg-card">
+    <div class="col col-sm-6">
+      <form class="form-container">
+        <div>
+          <h1 id="h1">Register</h1>
+        </div>
+        <div class="form-Reg">
+          <label for="exampleInputEmail1">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName1"
+            [(ngModel)]="username"
+            name="input1"
+            placeholder="Enter Full Name"
+          />
+        </div>
+        <br />
+        <div class="form-Reg">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            [(ngModel)]="email"
+            name="input2"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <br />
+        <div class="form-Reg">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="Password"
+            class="form-control"
+            id="exampleInputPassword1"
+            [(ngModel)]="password"
+            name="input3"
+            placeholder="Password"
+          />
+        </div>
+        <br />
+        <div class="form-Reg">
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword2"
+            placeholder="Confirm Password"
+          />
+        </div>
+        <button type="submit" class="btn-Reg" (click)="Add()">Sign up</button>
+        <div>
+          <br />
+          <span>already registred?</span>
+          <a
+            style="text-decoration: none; color: #6daefd"
+            routerLinkActive="active"
+            routerLink="/login"
+          >
+            Log in</a
+          >
+        </div>
+        <br />
+      </form>
+    </div>
+  </div>
+</div>

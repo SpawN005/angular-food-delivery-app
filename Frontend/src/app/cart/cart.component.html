@@ -1,0 +1,73 @@
+<div class="container">
+  <p id="cart">Cart:</p>
+  <div class="row">
+    <div class="col-md-8 offset-md-2 table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">QTY</th>
+            <th scope="col">Total</th>
+            <th scope="col" id="remove">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cart-item" *ngFor="let item of items">
+            <td>{{ item.foodnom }}</td>
+            <td>
+              {{ item.price / item.quantity | currency: "$ ":"symbol":".0" }}
+            </td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price | currency }}</td>
+            <td id="remove" (click)="delete(item)">
+              <button id="X">X</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row" id="row">
+    <div class="col-md-3 offset-md-2 offset-1 col-10">
+      <button
+        class="btn-lg btn-block"
+        id="update"
+        (click)="total()"
+        onclick="this.disabled = true"
+      >
+        Update Cart
+      </button>
+    </div>
+    <div class="offset-md-1 col-md-4 table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th colspan="2">Cart Totals</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let sum of Subtotal | slice: 0:10; let i = index">
+          <tr>
+            <td>Subtotal</td>
+            <td>{{ sum.sum | currency: "$ ":"symbol":".0" }}</td>
+          </tr>
+          <tr>
+            <td>Shipping</td>
+            <td>{{ sum.sum * 0.01 | currency: "$ ":"symbol":".0" }}</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>
+              {{ sum.sum + sum.sum * 0.01 | currency: "$ ":"symbol":".0" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-md-6 offset-1 col-10">
+      <button class="btn-lg btn-block" id="check">Check Out</button>
+    </div>
+  </div>
+</div>

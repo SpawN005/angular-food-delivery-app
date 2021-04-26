@@ -1,0 +1,44 @@
+.bg-img {
+  background-image: url("src/assets/images/localisation.png");
+  background-repeat: no-repeat;
+  margin-bottom: 3%;
+  background-position: center;
+}
+mat-toolbar {
+  flex: 1 1 auto;
+  height: 150px;
+}
+
+#id2 {
+  color: white;
+}
+#btn1 {
+  background-color: white;
+  color: burlywood;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  border-radius: 8px;
+  margin-left: 20%;
+  margin-top: 7%;
+}
+h1 {
+  color: black;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  #id1 {
+    width: 70%;
+  }
+}
+#id1 {
+  left: 0;
+  margin: 20px;
+  max-height: 90%;
+  padding: 40px;
+  background-color: burlywood;
+  border-radius: 30px;
+}
