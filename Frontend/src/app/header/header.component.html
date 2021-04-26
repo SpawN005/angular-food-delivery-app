@@ -1,31 +1,16 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md  navbar-dark bg-dark" style="border-color: #292b2c">
   <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      (click)="iscollapsed = !iscollapsed"
-      [attr.aria-expanded]="iscollapsed"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"> </span>
+    <button class="navbar-toggler " type="button" (click)="iscollapsed=!iscollapsed" [attr.aria-expanded]="iscollapsed" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+      </span>
     </button>
-    <h1 style="color: whitesmoke">food-logo</h1>
+    <img id="logo" src="{{ logo }}" />
 
-    <div
-      class="collapse navbar-collapse me-auto bg-dark"
-      style="height: 50px"
-      id="navbarSupportedContent"
-      [ngbCollapse]="iscollapsed"
-    >
+    <div class="collapse navbar-collapse  me-auto  bg-dark" style="height: 50px;" id="navbarSupportedContent" [ngbCollapse]="iscollapsed">
       <ul class="navbar-nav offset-lg-6">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="home"
-            >Home</a
-          >
+          <a class="nav-link" routerLinkActive="active" routerLink="home" 
+            >Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/products"
@@ -34,7 +19,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/about-us"
+          <a class="nav-link" routerLinkActive="active" routerLink="/about-us" style="width: 105%"
             >About Us</a
           >
         </li>
@@ -48,7 +33,7 @@
             class="nav-link"
             *ngIf="isLoggedIn()"
             routerLinkActive="active"
-            routerLink="/login"
+            routerLink="/login" style="width: 105%"
             >Sign up</a
           >
         </li>
@@ -57,15 +42,11 @@
             class="nav-link"
             *ngIf="!isLoggedIn()"
             (click)="logout()"
-            style="cursor: pointer"
+            style="cursor: pointer" style="width: 105%"
             >Sign out</a
           >
         </li>
-        <li class="nav-item">
-          <button id="btn2" routerLink="/cart">
-            <i class="fa fa-shopping-cart"></i> Cart
-          </button>
-        </li>
+        <div class="vl"></div>
       </ul>
       <form class="d-flex p-3">
         <input
@@ -74,8 +55,10 @@
           placeholder="Search"
           aria-label="Search"
         />
-        <button class="btn-outline" type="submit">Search</button>
+        <button class="btn-outline" type="submit" style="width: 40% !important">Search</button>
       </form>
     </div>
+    <button id="btn2"routerLink="/cart"><i class="fa fa-shopping-cart"></i> cart</button>
+
   </div>
 </nav>
