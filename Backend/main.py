@@ -147,3 +147,4 @@ def get_mycart(email:str):
     for result in rv:
         json_data.append(dict(zip(row_headers,result)))
     return json_data
+
